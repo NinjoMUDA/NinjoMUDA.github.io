@@ -1,8 +1,8 @@
 # ponytail: large/local-only files stay off the public site
 builds/
-feyywood.mp4
+/feyywood.mp4
 .claude/
 email.txt
 Dechayut_Panyawutvorakul_Resume.pdf
 feywood_bug_report.md
-dungeondrift.mp4
+/dungeondrift.mp4
