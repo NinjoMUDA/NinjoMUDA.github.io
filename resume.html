@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dechayut Panyawutvorakul — Resume</title>
+<!-- Print: Ctrl+P → Save as PDF, A4, margins "None", background graphics ON -->
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ddd; font: 9.5pt/1.32 "Segoe UI", Arial, sans-serif; color: #222; }
+  .page { width: 210mm; min-height: 297mm; margin: 10mm auto; padding: 9mm 14mm; background: #fff; }
+  @media print { body { background: #fff; } .page { margin: 0; } }
+  h1 { font-size: 22pt; margin: 0; letter-spacing: .5px; }
+  .role { color: #6b3fd6; font-weight: 600; margin: 2px 0 6px; }
+  .contact { font-size: 9pt; color: #555; }
+  .contact a { color: inherit; }
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1px; color: #6b3fd6;
+       border-bottom: 1.5px solid #6b3fd6; padding-bottom: 2px; margin: 10px 0 5px; }
+  .item { margin-bottom: 6px; }
+  .row { display: flex; justify-content: space-between; gap: 8px; }
+  .row b { font-size: 10.5pt; }
+  .meta { color: #666; font-size: 9pt; white-space: nowrap; }
+  .sub { font-style: italic; color: #444; font-size: 9.5pt; }
+  ul { margin: 3px 0 0; padding-left: 16px; }
+  li { margin-bottom: 1px; }
+  .skills div { margin-bottom: 3px; }
+  mark.todo { background: #fff3a0; padding: 0 3px; }
+  @media print { mark.todo { background: #fff3a0; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>DECHAYUT PANYAWUTVORAKUL</h1>
+  <div class="role">Game Designer Intern (QA Involved)</div>
+  <div class="contact">
+    <a href="mailto:ninjomuda@gmail.com">ninjomuda@gmail.com</a> · <!--PHONE-->Bangkok, Thailand ·
+    <a href="https://ninjomuda.github.io">ninjomuda.github.io</a> · <a href="https://github.com/NinjoMUDA">github.com/NinjoMUDA</a>
+  </div>
+
+  <h2>Summary</h2>
+  <p style="margin:0">
+    Third-year Computer Engineering student at KMUTT who designs games and likes finding out why things break.
+    I've written a 10-floor roguelite design doc, built a Unity game with a team, and done hands-on QA on a live
+    national-competition website, from writing test cases to edge-case and security testing.
+    I want to learn game design and game QA the way it's done in a real studio: designing systems, playtesting them and catching what breaks before players do.
+    Available <mark class="todo">month–month 2027</mark>, on-site or online.
+  </p>
+
+  <h2>Experience</h2>
+  <div class="item">
+    <div class="row"><b>QA Tester — BangMod Hackathon 2026</b><span class="meta">Aug – Sep 2026</span></div>
+    <div class="sub">National C/C++ programming competition for high-school students, Faculty of Engineering, KMUTT</div>
+    <ul>
+      <li>Tested the event website and team-registration system before launch as part of a 3-person QA team, tracking 63 test cases in a shared QA sheet.</li>
+      <li>Owned 15 test cases covering the end-to-end registration happy path, back-button state preservation, double-submit prevention, session timeout, submission-deadline cutoff and mobile layout.</li>
+      <li>Ran negative and security tests (an <code>.exe</code> disguised as <code>.pdf</code>) and reported a validation flaw: the birthdate picker accepted future dates.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="item">
+    <div class="row"><b>Feywood — 2D Action Survival Prototype (Unity)</b><span class="meta">Nov – Dec 2024</span></div>
+    <div class="sub">First-year game project · team of 4 · Unity, C#</div>
+    <ul>
+      <li>Built a playable prototype with the team: main menu, character select, auto-attacking weapons that level up, 9 passive items, XP gems with drop rates, and an endless chunk-based map.</li>
+      <li>Implemented the XP-gem magnet pickup in C# (pull radius scales with the player's Magnet stat) and researched game-design techniques, color schemes, and character and item design.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><b>Unknown To Depth — Game Concept &amp; Design Doc</b><span class="meta">2023</span></div>
+    <div class="sub">Team Game4Life · 5 members · 37-slide concept deck · planned for Unity</div>
+    <ul>
+      <li>Designed a third-person roguelite with a time-loop premise: each death reshapes the floor, and the player has to clear 10 themed floors, each with its own boss and mechanic (e.g. an underwater floor with air rooms, a boss revived by a World Tree).</li>
+      <li>Defined the core loop and a two-currency economy (Souls for permanent upgrades and troops, Coins for run items), plus perk rooms, event rooms, a weapon museum, UI layout and art direction; later reworked it into a 2.5D action-RPG with slash, dash, parry and spells.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><b>TokTickIT — IT Ticketing Web App</b><span class="meta">Aug 2026 – present</span></div>
+    <div class="sub">CPE 334 Software Engineering · individual labs + team sprint project</div>
+    <ul><li>Built a full-stack ticketing system with roles, staff and admin screens and dashboards, then ran a final regression pass across all features.</li></ul>
+  </div>
+  <div class="item">
+    <div class="row"><b>ModDer — Campus Social App (UI Designer)</b><span class="meta">Aug – Dec 2024</span></div>
+    <div class="sub">CPE 123 User Experience / User Interface · team of 4 · Figma</div>
+    <ul>
+      <li>As UI Designer, took the app from persona and storyboard to lo-fi and hi-fi Figma prototypes and a UI mock-up, then revised it after a user evaluation.</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="row"><b>B.Eng. Computer Engineering</b><span class="meta">2024 – 2028 (expected)</span></div>
+    <div class="sub">King Mongkut's University of Technology Thonburi (KMUTT)</div>
+    <div style="font-size:9pt;margin-top:2px">Relevant courses: Software Engineering, UX/UI, Data Structures, Algorithms, Database Systems</div>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><b>QA:</b> test case design, regression testing, boundary &amp; negative testing, cross-browser/responsive testing, bug reporting</div>
+    <div><b>Game design:</b> concept &amp; design docs, core loops, progression &amp; economy design, level/floor themes, Unity</div>
+    <div><b>UX/UI:</b> personas, storyboards, wireframing, lo/hi-fi prototyping, Figma, Miro</div>
+    <div><b>Programming &amp; tools:</b> C#, C, Python, SQL, Git, Docker, GCP, Google Sheets</div>
+    <div><b>Languages:</b> Thai (native), English <mark class="todo">(level)</mark></div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dechayut Panyawutvorakul — Game Design &amp; QA Portfolio</title>
+<style>
+  :root { --bg:#0f0e17; --card:#1b1a2b; --text:#e8e6f0; --muted:#a7a3bd; --accent:#a786ff; --pass:#4ade80; --flaw:#fb923c; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 "Segoe UI", system-ui, sans-serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  nav { position:sticky; top:0; background:rgba(15,14,23,.9); backdrop-filter:blur(6px); border-bottom:1px solid #2a2840; z-index:1; }
+  nav .wrap { display:flex; gap:20px; padding:12px 20px; flex-wrap:wrap; }
+  nav a { color:var(--muted); text-decoration:none; font-size:14px; }
+  nav a:hover { color:var(--text); }
+  header { padding:80px 0 50px; }
+  header h1 { font-size:clamp(32px,6vw,52px); margin:0; line-height:1.1; }
+  header p { color:var(--muted); max-width:620px; font-size:18px; }
+  .tag { display:inline-block; background:#2a2244; color:var(--accent); border-radius:999px; padding:3px 12px; font-size:13px; margin:0 6px 6px 0; }
+  .btn { display:inline-block; background:var(--accent); color:#120f20; padding:10px 20px; border-radius:8px; font-weight:600; text-decoration:none; margin-right:10px; }
+  .btn.ghost { background:none; color:var(--accent); border:1px solid var(--accent); }
+  section { padding:40px 0; }
+  h2 { font-size:26px; margin:0 0 20px; }
+  h2 small { color:var(--muted); font-size:14px; font-weight:400; margin-left:8px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+  .card { background:var(--card); border-radius:12px; padding:22px; border:1px solid #2a2840; }
+  .card h3 { margin:0 0 4px; font-size:19px; }
+  .card .meta { color:var(--muted); font-size:13px; margin-bottom:10px; }
+  .card ul { padding-left:18px; margin:8px 0 0; }
+  .feature { grid-column:1/-1; }
+  .stats { display:flex; gap:28px; flex-wrap:wrap; margin:14px 0; }
+  .stats b { display:block; font-size:30px; color:var(--accent); line-height:1; }
+  .stats span { color:var(--muted); font-size:13px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin-top:12px; }
+  th, td { text-align:left; padding:7px 8px; border-bottom:1px solid #2a2840; vertical-align:top; }
+  th { color:var(--muted); font-weight:500; }
+  .pass { color:var(--pass); font-weight:600; } .flaw { color:var(--flaw); font-weight:600; }
+  .todo { background:#5a4a00; color:#ffe680; padding:0 4px; border-radius:3px; }
+  .placeholder { border:2px dashed #4a4470; background:none; }
+  footer { padding:40px 0 60px; color:var(--muted); font-size:14px; border-top:1px solid #2a2840; margin-top:30px; }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#games">Game Design</a><a href="#qa">QA</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+</div></nav>
+
+<div class="wrap">
+
+<header>
+  <span class="tag">Game Designer Intern (QA Involved)</span>
+  <h1>Dechayut Panyawutvorakul</h1>
+  <p>Third-year Computer Engineering student at KMUTT. I break things on purpose so players never have to,
+     and I design from the player's point of view.</p>
+  <a class="btn" href="resume.html">Resume</a>
+  <a class="btn ghost" href="#contact">Contact</a>
+</header>
+
+<section id="games">
+  <h2>Game Design</h2>
+  <div class="grid">
+    <!-- ponytail: add <img src="images/xxx.png" style="width:100%;border-radius:8px"> per card once you export screenshots -->
+    <div class="card feature">
+      <h3>Unknown To Depth</h3>
+      <div class="meta">Game concept &amp; design doc · Team Game4Life (5) · 2023 · 37 slides</div>
+      <p>A third-person <b>roguelite with a time loop</b>. A cursed hero respawns in "the Depth" every time he dies,
+         and each death reshapes the floor through a butterfly effect. To break the curse he has to climb 10 floors of a tower,
+         each one its own world.</p>
+      <ul>
+        <li><b>10 themed floors with a boss mechanic each:</b> a World Tree that revives the boss until you destroy it, an underwater kingdom where you hunt for air rooms, a three-headed elemental dragon, a library outside time with debris falling from rifts</li>
+        <li><b>Core loop and economy:</b> Souls (permanent stat upgrades, hired troops, dealer) vs Coins (shop items for the current run), plus artifacts, cores (weapon evolution) and runes (perks)</li>
+        <li><b>Room system:</b> players read the symbols on the doors to choose their path: shop, perk, soul (more risk, more reward), casino, puzzle, chest</li>
+        <li><b>Meta-progression:</b> perk rooms you clear stay unlocked from floor 1 on the next run, and perk slots grow from 1 to 4</li>
+        <li><b>Iteration:</b> later reworked into a 2.5D action-RPG with slash, dash, parry and spells, and stat requirements that soften instead of locking gear</li>
+      </ul>
+      <p><a href="https://www.canva.com/design/DAFjdHIb3l0/nLtrp3_wCuFIx3wihWGA6Q/view" target="_blank">▶ View the design deck</a></p>
+    </div>
+    <div class="card">
+      <video src="media/feywood.mp4" poster="media/feywood_poster.jpg" controls muted playsinline preload="none" style="width:100%;border-radius:8px;margin-bottom:12px"></video>
+      <h3>Feywood</h3>
+      <div class="meta">Playable prototype · 2D action survival · Unity / C# · team of 4 · Nov – Dec 2024</div>
+      <p>Our team's first game, a playable prototype: simple controls, auto-attacking weapons and mounting chaos. Its identity is "a blend of whimsy and intensity".</p>
+      <ul>
+        <li>Main menu, character select, weapons that level up (damage, extra projectiles, area scaling), 9 passive items (Cloak, Bracer, Comet, Lantern…), XP gems with drop rates, and an endless chunk-based map</li>
+        <li>I implemented the <b>XP-gem magnet pickup</b> in C# (pull radius scales with the player's Magnet stat), and researched game-design techniques, color schemes, and character and item design</li>
+      </ul>
+      <p style="color:var(--muted);font-size:14px"><b>Post-mortem:</b> it plays from start to finish but was never balanced, and it still has known bugs. The next step would be tuning the waves and enemy stats.</p>
+      <p><a href="https://www.canva.com/design/DAGW6xRjEM4/sv91e_ii9r682GKRs3GmXA/view" target="_blank">Slides</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="qa">
+  <h2>QA Work</h2>
+  <div class="card feature">
+    <h3>BangMod Hackathon 2026: website &amp; registration QA</h3>
+    <div class="meta">QA Tester · Aug – Sep 2026 · Faculty of Engineering, KMUTT · team of 3 testers</div>
+    <p>Pre-launch testing of the website for a national C/C++ programming competition for high-school students:
+       landing pages, past-event archive, and the full team-registration flow (Google sign-in, multi-step form, document uploads, PDPA consent, admin approval).</p>
+    <div class="stats">
+      <div><b>63</b><span>test cases tracked</span></div>
+      <div><b>15</b><span>owned by me</span></div>
+      <div><b>3</b><span>test areas</span></div>
+    </div>
+    <table>
+      <tr><th>ID</th><th>Test</th><th>What I checked</th><th>Result</th></tr>
+      <tr><td>REG-002</td><td>Happy path</td><td>Google sign-in → register → finish, end to end</td><td class="pass">Pass</td></tr>
+      <tr><td>REG-007</td><td>Back button</td><td>Going back a step keeps earlier answers</td><td class="pass">Pass</td></tr>
+      <tr><td>REG-009</td><td>Double submit</td><td>Spam-clicking Submit creates only one registration</td><td class="pass">Pass</td></tr>
+      <tr><td>REG-019</td><td>Session timeout</td><td>Expired session redirects to login</td><td class="pass">Pass</td></tr>
+      <tr><td>REG-023</td><td>Date bounds</td><td>Birthdate picker should block future dates</td><td class="flaw">Flaw found</td></tr>
+      <tr><td>REG-026</td><td>Malicious file</td><td><code>.exe</code> renamed to <code>.pdf</code> is rejected by the backend</td><td class="pass">Pass</td></tr>
+      <tr><td>REG-032</td><td>Deadline cutoff</td><td>Submitting exactly at closing time</td><td class="pass">Pass</td></tr>
+      <tr><td>REG-033</td><td>Mobile</td><td>Layout, form and uploads work on phone</td><td class="pass">Pass</td></tr>
+    </table>
+    <p style="color:var(--muted);font-size:14px">Why it matters for games: it's the same mindset as playtesting. Find the edge cases, the sequence-breaks and the "what if the player spams this button".</p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Other Projects <small>coursework</small></h2>
+  <div class="grid">
+    <div class="card">
+      <h3>TokTickIT</h3>
+      <div class="meta">Software Engineering · Aug 2026 – now</div>
+      <p>A full-stack IT ticketing app built across four labs: roles, staff and admin screens, dashboards, and a <b>final regression pass</b>. The team version adds sprints, CI/CD, Docker and GCP.</p>
+    </div>
+    <div class="card">
+      <h3>ModDer</h3>
+      <div class="meta">Campus social app · <b>UI Designer</b> · team of 4 · Figma · 2024</div>
+      <p>"Your Campus, Your Friends, Your Moment." We went from persona and storyboard to MVP list, then lo-fi and hi-fi Figma prototypes, a UI mock-up and a round of user evaluation.
+         <a href="https://www.canva.com/design/DAGWwX4215o/xOgQmDO4dX1jsOYuBrN6AQ/view" target="_blank">Slides</a></p>
+    </div>
+    <div class="card">
+      <h3>Competitor Research</h3>
+      <div class="meta">Digital Product Innovation · team of 5 · 2026</div>
+      <p>Interviewed users to find pain points, compared competing products and reframed the findings into product concepts.</p>
+    </div>
+    <div class="card">
+      <h3>Data Analysis &amp; ML</h3>
+      <div class="meta">Data Models · team of 6 · 2026</div>
+      <p>Data cleaning, visualization and a classification model in Python.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>QA</h3><p>Test case design · regression · boundary &amp; negative testing · cross-browser/responsive · bug reporting</p></div>
+    <div class="card"><h3>Design</h3><p>User research · empathy maps · wireframes · prototyping · Figma · Miro · design docs · core loops · progression &amp; economy</p></div>
+    <div class="card"><h3>Tech</h3><p>Unity · C# · C · Python · SQL · Git · Docker · GCP</p></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <a href="mailto:ninjomuda@gmail.com">ninjomuda@gmail.com</a> · <a href="https://github.com/NinjoMUDA">GitHub</a> · <a href="resume.html">Resume</a>
+</footer>
+
+</div>
+</body>
+</html>
