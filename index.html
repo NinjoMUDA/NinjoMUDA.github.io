@@ -85,6 +85,16 @@
   .links a{font-weight:600;margin-right:18px;font-size:15px}
 
   /* Unknown To Depth "tower" visual */
+  /* Dungeon Drift node-map visual */
+  .nodemap{padding:26px;background:linear-gradient(160deg,#0b2a2e 0%,#120c26 60%,#2a0d5c 100%)}
+  .nm-row{display:flex;justify-content:center;gap:14px;margin:0 0 14px}
+  .node{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font:8px var(--pixel);text-align:center;line-height:1.5;
+        background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#d9d3f0}
+  .node.c{border-color:rgba(0,201,201,.5)} .node.e{border-color:#fb923c;color:#fdba74} .node.s{border-color:#4ade80;color:#86efac}
+  .node.m{border-color:#c4b5fd;color:#ddd6fe} .node.v{border-color:#facc15;color:#fde68a}
+  .node.b{width:74px;height:74px;background:rgba(73,17,147,.5);border:2px solid #c4b5fd;color:#fff;font-size:9px}
+  .nm-legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:18px;font-size:12.5px;color:#b9aee0}
+  .nm-legend b{color:#fff;font-weight:600}
   .tower{padding:26px;background:linear-gradient(160deg,#2a0d5c 0%,#140a2b 55%,#0b1f2a 100%)}
   .tower-title{font:12px var(--pixel);color:#7ff0f0;margin-bottom:6px}
   .tower-sub{font-size:13px;color:#b9aee0;margin-bottom:18px}
@@ -155,7 +165,7 @@
     <a class="btn ghost" href="mailto:ninjomuda@gmail.com">Email me</a>
   </div>
   <div class="stats">
-    <div class="stat"><b>2</b><span>game projects</span></div>
+    <div class="stat"><b>3</b><span>game projects</span></div>
     <div class="stat"><b>10</b><span>floors designed</span></div>
     <div class="stat"><b>63</b><span>test cases on a live site</span></div>
     <div class="stat"><b>3rd</b><span>year · Computer Eng.</span></div>
@@ -165,7 +175,40 @@
 <main>
 <section id="games"><div class="wrap">
   <div class="sec-head"><span class="num">01</span><h2>Game Design</h2>
-    <p>A playable prototype we built in Unity, and a deep design doc for a roguelite.</p></div>
+    <p>What I'm building now, a playable prototype we built in Unity, and a deep design doc for a roguelite.</p></div>
+
+  <!-- Dungeon Drift (in development). ponytail: swap .nodemap for a <video> once a gameplay clip exists -->
+  <article class="feature flip">
+    <div class="media nodemap" aria-label="Dungeon Drift run map: combat, rival, shop, master, event and boss nodes">
+      <div class="tower-title">DUNGEON DRIFT · RUN MAP</div>
+      <div class="tower-sub">You see the whole run. Pick the path, then let your party fight.</div>
+      <div class="nm-row"><div class="node b">BOSS</div></div>
+      <div class="nm-row"><div class="node e">RIVAL</div><div class="node s">SHOP</div><div class="node c">FIGHT</div></div>
+      <div class="nm-row"><div class="node c">FIGHT</div><div class="node m">MASTER</div><div class="node v">EVENT</div></div>
+      <div class="nm-row"><div class="node c">FIGHT</div><div class="node c">FIGHT</div></div>
+      <div class="nm-legend">
+        <span><b>107</b> skills</span><span><b>379</b> traits</span>
+        <span><b>66</b> items · <b>11</b> weapon types</span><span><b>27</b> enemies · <b>9</b> companions</span>
+      </div>
+    </div>
+    <div>
+      <h3>Dungeon Drift</h3>
+      <div class="meta">
+        <span class="chip t">In development</span><span class="chip">Roguelike × auto-battler</span>
+        <span class="chip">Unity 6 · HD-2D</span><span class="chip">Jun 2026 – now</span>
+      </div>
+      <p class="pitch">You play a god who isn't at full power yet. You send a human party into the dungeon, arrange them before each fight,
+         and then they battle on their own. Faith you bring back makes your god stronger for the next run.</p>
+      <p class="role"><b>My part:</b> I lead the design and balance: the world pillars, more than 50 numbered design decisions, and every tuning pass.
+         The code is written with AI coding agents (Claude, Codex) that I direct and review, plus a collaborator.</p>
+      <ul class="points">
+        <li><b>Theme that justifies the mechanic</b>Auto-battle is usually a limitation. Here the player is a god, so a god doesn't fight; it plans, blesses and chooses the path. The constraint becomes the fantasy.</li>
+        <li><b>Balance by measurement</b>I tune with recorded team fights, not gut feel: Bow range 6.5 → 8 and Rifle 7 → 9 until Rifle ≈ Bow, Mace stun 20% → 30%. I also flagged Greatsword T4 as an outlier (49 DPS vs 22–38).</li>
+        <li><b>Cutting what didn't work</b>I tried Tug-of-War lanes and a TFT-style grid, cut both, and moved to free-form clashes where formation still matters: the front line walls off the back row.</li>
+        <li><b>Reward loop</b>Every fight ends in a pick screen (gold, rival loot, boss artifact 1-of-3), then a skill pick and a level-up summary, before you return to the map.</li>
+      </ul>
+    </div>
+  </article>
 
   <!-- Feywood -->
   <article class="feature">
