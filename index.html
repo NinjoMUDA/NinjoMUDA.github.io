@@ -177,9 +177,12 @@
   <div class="sec-head"><span class="num">01</span><h2>Game Design</h2>
     <p>What I'm building now, a playable prototype we built in Unity, and a deep design doc for a roguelite.</p></div>
 
-  <!-- Dungeon Drift (in development). ponytail: swap .nodemap for a <video> once a gameplay clip exists -->
+  <!-- Dungeon Drift (in development) -->
   <article class="feature flip">
-    <div class="media nodemap" aria-label="Dungeon Drift run map: combat, rival, shop, master, event and boss nodes">
+    <div class="media">
+      <video src="media/dungeondrift.mp4" poster="media/dungeondrift_poster.jpg" controls muted playsinline preload="none"></video>
+      <div class="caption"><span>▶ 90s capture: pick hero → fight → recruit → Ascendancy</span><span>Unity 6 · work in progress</span></div>
+      <div class="nodemap" aria-label="Dungeon Drift run map: combat, rival, shop, master, event and boss nodes">
       <div class="tower-title">DUNGEON DRIFT · RUN MAP</div>
       <div class="tower-sub">You see the whole run. Pick the path, then let your party fight.</div>
       <div class="nm-row"><div class="node b">BOSS</div></div>
@@ -189,6 +192,7 @@
       <div class="nm-legend">
         <span><b>107</b> skills</span><span><b>379</b> traits</span>
         <span><b>66</b> items · <b>11</b> weapon types</span><span><b>27</b> enemies · <b>9</b> companions</span>
+      </div>
       </div>
     </div>
     <div>
@@ -200,7 +204,7 @@
       <p class="pitch">You play a god who isn't at full power yet. You send a human party into the dungeon, arrange them before each fight,
          and then they battle on their own. Faith you bring back makes your god stronger for the next run.</p>
       <p class="role"><b>My part:</b> I lead the design and balance: the world pillars, more than 50 numbered design decisions, and every tuning pass.
-         The code is written with AI coding agents (Claude, Codex) that I direct and review, plus a collaborator.</p>
+         The code is written with AI coding agents (Claude, Codex) that I direct and review. Most of the art is by my teammate Arth.</p>
       <ul class="points">
         <li><b>Theme that justifies the mechanic</b>Auto-battle is usually a limitation. Here the player is a god, so a god doesn't fight; it plans, blesses and chooses the path. The constraint becomes the fantasy.</li>
         <li><b>Balance by measurement</b>I tune with recorded team fights, not gut feel: Bow range 6.5 → 8 and Rifle 7 → 9 until Rifle ≈ Bow, Mace stun 20% → 30%. I also flagged Greatsword T4 as an outlier (49 DPS vs 22–38).</li>
