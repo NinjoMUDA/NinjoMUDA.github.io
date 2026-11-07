@@ -153,7 +153,7 @@
   .avail .when{font:700 24px/1.2 var(--display);color:var(--text);margin:4px 0 6px}
   .prr{display:grid;gap:8px;margin-top:12px}
   .prr div{font-size:14.5px;color:#cfcae0}
-  .prr b{display:inline-block;min-width:70px;color:var(--teal);font-weight:600}
+  .prr b{display:block;color:var(--teal);font-weight:600;font-size:13px;letter-spacing:.3px;text-transform:uppercase;margin-bottom:2px}
   .learn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 0}
   @media (max-width:720px){.learn{grid-template-columns:1fr}}
   .learn div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;color:#cfcae0}
@@ -250,8 +250,16 @@
       </div>
       <p class="pitch">You play a god who isn't at full power yet. You send a human party into the dungeon, arrange them before each fight,
          and then they battle on their own. Faith you bring back makes your god stronger for the next run.</p>
-      <p class="role"><b>My part:</b> I lead the design and balance: the world pillars, more than 50 numbered design decisions, and every tuning pass.
-         The code is written with AI coding agents (Claude, Codex) that I direct and review. Most of the art is by my teammate Arth.</p>
+      <div class="prr">
+        <div><b>Why</b>I wanted a game about drafting a party and building characters that click together in team fights. Auto-chess games
+           do this, but they're competitive matches where your power comes from a random shop each round. I wanted the same team-building
+           in a single-player roguelike, where your build grows across a whole run. No game did that the way I wanted, so I started making one.</div>
+        <div><b>Inspired by</b>Dota 2 custom auto-battlers (the fights), Slay the Spire (the node map and reward picks), Path of Exile 2 (Ascendancy and item depth)</div>
+        <div><b>My role</b>I lead the design and balance: the world pillars, more than 50 numbered design decisions, and every tuning pass.
+           The code is written with AI coding agents (Claude, Codex) that I direct and review. Most of the art is by my teammate Arth.</div>
+        <div><b>Status</b>In development. I'm still reworking systems because the core mechanic doesn't feel good enough yet, and getting it right comes before adding content.</div>
+      </div>
+      <div style="height:18px"></div>
       <ul class="points">
         <li><b>Theme that justifies the mechanic</b>Auto-battle is usually a limitation. Here the player is a god, so a god doesn't fight; it plans, blesses and chooses the path. The constraint becomes the fantasy.</li>
         <li><b>Balance by measurement</b>I tune with recorded team fights, not gut feel: Bow range 6.5 → 8 and Rifle 7 → 9 until Rifle ≈ Bow, Mace stun 20% → 30%. I also flagged Greatsword T4 as an outlier (49 DPS vs 22–38).</li>
@@ -287,13 +295,19 @@
       </div>
       <p class="pitch">A cursed hero respawns in <i>the Depth</i> every time he dies, and each death reshapes the floor through a butterfly effect.
          To break the curse he has to climb a tower of 10 worlds.</p>
-      <p class="role"><b>My part:</b> I designed the core game loop and the mechanics: the two-currency economy, the room system and meta-progression.
-         We didn't make the shortlist, but writing a 37-slide pitch taught me to explain a design clearly enough for someone else to judge it.</p>
+      <div class="prr">
+        <div><b>Inspired by</b>Hades: dying is part of the loop, and every run makes you stronger.</div>
+        <div><b>My role</b>I designed the core game loop and the mechanics: the two-currency economy, the room system and meta-progression.</div>
+        <div><b>Result</b>We entered depa Game Accelerator with a 37-slide pitch and didn't make the shortlist.</div>
+        <div><b>What I learned</b>We thought too big: 10 floors, a deep lore and lots of features, while the most important part, the
+           moment-to-moment gameplay, got the least explanation even though it needed the most. Now I start small, nail the core loop first,
+           and design systems that feed into each other instead of piling them up.</div>
+      </div>
+      <div style="height:18px"></div>
       <ul class="points">
         <li><b>Two-currency economy</b>Souls buy permanent upgrades and hired troops; Coins buy shop items for the current run. Artifacts, cores and runes add stat boosts, weapon evolution and perks.</li>
         <li><b>Readable room choices</b>A symbol on each door shows what's behind it (shop, perk, soul room, casino, puzzle or chest), so every path is a risk/reward decision.</li>
         <li><b>Meta-progression</b>Perk rooms you clear stay unlocked from floor 1 on the next run, and perk slots grow from 1 to 4.</li>
-        <li><b>Iteration</b>Later reworked into a 2.5D action-RPG with slash, dash, parry and spells, where under-levelled gear gets weaker instead of locked.</li>
       </ul>
       <div class="links"><a href="https://www.canva.com/design/DAFjdHIb3l0/nLtrp3_wCuFIx3wihWGA6Q/view" target="_blank" rel="noopener">View the 37-slide design deck ↗</a></div>
     </div>
@@ -316,9 +330,15 @@
       <p class="pitch">Our team's first game: simple controls, auto-attacking weapons and mounting chaos.
          The identity we aimed for was <i>"a blend of whimsy and intensity."</i></p>
       <div class="prr">
-        <div><b>Process</b>We researched game-design techniques, color schemes and character and item design, then built it in Unity over about 4 weeks. It was my first time using Unity, so I learned it from YouTube tutorials as I went.</div>
-        <div><b>My role</b>I wrote the game's code in C#: movement, weapons, enemies, the XP-gem magnet pickup (its radius scales with the Magnet stat) and the menus. I also worked on the design research.</div>
-        <div><b>Result</b>A playable game with a main menu, character select, weapons that level up, 9 passive items, XP drops and an endless map. It was never balanced, and the next step would be tuning the waves and enemy stats.</div>
+        <div><b>Inspired by</b>Vampire Survivors</div>
+        <div><b>Process</b>A 2-week sprint. It was my first time using Unity, so I learned it from YouTube tutorials while we built it,
+           alongside research on game-design techniques, color schemes and character and item design.</div>
+        <div><b>My role</b>I wrote the game's code in C#: movement, weapons, enemies, the XP-gem magnet pickup (its radius scales with the Magnet stat) and the menus.</div>
+        <div><b>Result</b>A playable game with a main menu, character select, weapons that level up, 9 passive items and an endless map. We showed it
+           at the Engineering Exploration Expo. Feedback from players and our instructor matched what we already suspected: with more time
+           and skill it could have been much more polished.</div>
+        <div><b>What I learned</b>A game you can play isn't the same as a game that's fun. Balance is where the fun comes from, and we had no time left for it.
+           I also learned to pick up a new engine fast, split work across a team with Git, and plan around a hard deadline.</div>
       </div>
       <div class="links" style="margin-top:16px"><a href="https://www.canva.com/design/DAGW6xRjEM4/sv91e_ii9r682GKRs3GmXA/view" target="_blank" rel="noopener">Project slides ↗</a></div>
     </div>
@@ -327,15 +347,17 @@
   <div class="grid">
     <div class="card"><h4>ModDer · UX/UI</h4><div class="sub">CPE 123 · UI Designer · team of 4 · Figma · 2024</div>
       <div class="prr">
+        <div><b>Problem</b>First-year students who want to meet new people on campus</div>
         <div><b>Process</b>Persona → storyboard → MVP list → lo-fi → hi-fi → user evaluation</div>
-        <div><b>My role</b>UI Designer: hi-fi Figma screens and UI mock-up</div>
-        <div><b>Result</b>A campus social app prototype, revised after evaluation. <a href="https://www.canva.com/design/DAGWwX4215o/xOgQmDO4dX1jsOYuBrN6AQ/view" target="_blank" rel="noopener">Slides ↗</a></div>
+        <div><b>My role</b>UI Designer: hi-fi Figma screens and the UI mock-up</div>
+        <div><b>Result</b>A campus social app prototype, revised after user evaluation. <a href="https://www.canva.com/design/DAGWwX4215o/xOgQmDO4dX1jsOYuBrN6AQ/view" target="_blank" rel="noopener">Slides ↗</a></div>
+        <div><b>What carries over to games</b>Design for the real player (persona), not yourself; prototype before building; test with users, then fix (the same as playtesting); and keep UI easy to read (HUDs, tooltips).</div>
       </div></div>
     <div class="card"><h4>TokTickIT · Software Eng.</h4><div class="sub">CPE 334 · 2026</div>
       <div class="prr">
-        <div><b>Process</b>4 labs plus a team project run in 3 sprints</div>
-        <div><b>My role</b>Built a full-stack ticketing app and ran the final regression</div>
-        <div><b>Result</b>Roles, staff and admin screens, dashboards; CI/CD on Docker and GCP</div>
+        <div><b>Goal</b>Learn a real team workflow on GitHub and how to use AI tools well in development</div>
+        <div><b>Process</b>4 individual labs, then a team project in 3 sprints</div>
+        <div><b>Result</b>A full-stack IT ticketing app with roles, dashboards and a final regression pass. This is where I picked up the GitHub and AI-agent workflow I now use in Dungeon Drift.</div>
       </div></div>
   </div>
 </div></section>
