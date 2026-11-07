@@ -31,7 +31,7 @@
   nav .logo{font:10px var(--pixel);color:var(--teal);text-decoration:none;margin-right:auto;letter-spacing:1px}
   nav a.l{color:var(--muted);text-decoration:none;font-size:15px}
   nav a.l:hover{color:var(--text)}
-  @media (max-width:640px){nav a.l{display:none} nav a.l.cta{display:inline}}
+  @media (max-width:640px){nav .wrap{gap:16px;overflow-x:auto;scrollbar-width:none} nav .wrap::-webkit-scrollbar{display:none} nav .logo{display:none} nav a.l{white-space:nowrap;font-size:14px}}
 
   /* hero */
   .hero{position:relative;padding:96px 0 72px;overflow:hidden}
@@ -141,58 +141,113 @@
   .contact p{color:var(--muted);margin:0 0 28px}
   .contact .btns{justify-content:center}
   footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13px;text-align:center}
+  /* --- 5-section layout additions --- */
+  .sub-h{font:10px var(--pixel);color:var(--teal);letter-spacing:1px;margin:8px 0 22px;display:flex;align-items:center;gap:12px}
+  .sub-h::after{content:"";flex:1;height:1px;background:var(--line)}
+  .intent{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:start;margin-top:40px;position:relative;z-index:1}
+  @media (max-width:860px){.intent{grid-template-columns:1fr}}
+  .panel{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+  .panel h4{font:700 18px/1.2 var(--display);margin:0 0 8px}
+  .panel p{margin:0;font-size:15.5px;color:#cfcae0}
+  .panel.avail{border-color:rgba(0,201,201,.35);background:linear-gradient(160deg,rgba(0,201,201,.08),var(--bg2))}
+  .avail .when{font:700 24px/1.2 var(--display);color:var(--text);margin:4px 0 6px}
+  .prr{display:grid;gap:8px;margin-top:12px}
+  .prr div{font-size:14.5px;color:#cfcae0}
+  .prr b{display:inline-block;min-width:70px;color:var(--teal);font-weight:600}
+  .learn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 0}
+  @media (max-width:720px){.learn{grid-template-columns:1fr}}
+  .learn div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;color:#cfcae0}
+  .learn b{display:block;font-family:var(--display);color:var(--text);font-size:15.5px;margin-bottom:2px}
+  .skill-table{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .skill-table .card ul{list-style:none;margin:6px 0 0;padding:0}
+  .skill-table .card li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .skill-table .card li:last-child{border-bottom:0}
+  .lvl{font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;white-space:nowrap}
+  .lvl.i{background:rgba(0,201,201,.12);color:#7ff0f0}
+  .lvl.b{background:rgba(139,92,246,.14);color:#cdbcff}
+  .lvl.n{background:rgba(74,222,128,.12);color:var(--pass)}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;max-width:960px;margin:0 auto;text-align:left}
+  .contact-grid a,.contact-grid div{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--text)}
+  .contact-grid a:hover{border-color:var(--teal)}
+  .contact-grid small{display:block;color:var(--muted);font-size:13px;margin-bottom:4px}
+  .contact-grid span{font-weight:600;overflow-wrap:anywhere}
+  .todo{background:#5a4a00;color:#ffe680;padding:0 6px;border-radius:4px}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
-  <a class="logo" href="#top">DECHAYUT.P</a>
-  <a class="l" href="#games">Games</a>
-  <a class="l" href="#qa">QA</a>
-  <a class="l" href="#more">Projects</a>
+  <a class="logo" href="#about">DECHAYUT.P</a>
+  <a class="l" href="#about">About Me</a>
+  <a class="l" href="#projects">Projects</a>
+  <a class="l" href="#activities">Activities</a>
   <a class="l" href="#skills">Skills</a>
-  <a class="l cta" href="resume.html">Resume ↗</a>
+  <a class="l cta" href="#contact">Contact</a>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap">
-  <div class="eyebrow">▸ Game Designer Intern · QA Involved</div>
+<!-- 1. ABOUT ME -->
+<header class="hero" id="about"><div class="wrap">
+  <div class="eyebrow">▸ 01 · About Me</div>
   <h1>Dechayut<br><span>Panyawutvorakul</span></h1>
-  <p class="lead">Computer Engineering student at <b>KMUTT</b>. I design game systems from the player's point of view,
-     and I break things on purpose so players never have to.</p>
+  <p class="lead">3rd-year <b>Computer Engineering</b> student, Faculty of Engineering,
+     <b>King Mongkut's University of Technology Thonburi (KMUTT)</b>.</p>
   <div class="btns">
-    <a class="btn primary" href="#games">See my games ↓</a>
+    <a class="btn primary" href="#projects">See my projects ↓</a>
     <a class="btn ghost" href="resume.html">Resume</a>
     <a class="btn ghost" href="mailto:ninjomuda@gmail.com">Email me</a>
   </div>
+
+  <div class="intent">
+    <div class="panel">
+      <h4>🎮 I want to intern as a Game Designer (QA involved)</h4>
+      <p>It started with <b>Minecraft mods</b>. As a kid I played a lot of them, and when a mod didn't feel right, I opened up the code to see
+         how it worked and what I'd change. That habit never left. Now whenever I play a game, I catch myself thinking
+         <i>"this system is great, so why is this one annoying part here? How would I fix it?"</i></p>
+      <p style="margin-top:10px">That curiosity pushed me to go looking for chances to design games: I entered <b>depa Game Accelerator</b>, a game concept competition,
+         with friends, and whenever a class project lets me, I steer it toward games. Today I'm building <b>Dungeon Drift</b>,
+         a roguelike auto-battler, in my free time. Fixing those annoying parts takes both design and testing, which is why
+         a Game Designer role with QA involved is exactly what I want to learn in a real studio.</p>
+      <p style="margin-top:12px;font-size:14px;color:var(--muted)">🎮 Games I play &amp; take apart: <b style="color:var(--text)">Dota 2 · Counter-Strike 2 · Deadlock</b></p>
+    </div>
+    <div class="panel avail">
+      <h4>📅 Internship period</h4>
+      <div class="when">Summer 2027</div>
+      <p>Dates and length flexible · On-site or online · Full-time</p>
+    </div>
+  </div>
+
   <div class="stats">
     <div class="stat"><b>3</b><span>game projects</span></div>
-    <div class="stat"><b>10</b><span>floors designed</span></div>
+    <div class="stat"><b>379</b><span>traits designed in Dungeon Drift</span></div>
     <div class="stat"><b>63</b><span>test cases on a live site</span></div>
-    <div class="stat"><b>3rd</b><span>year · Computer Eng.</span></div>
+    <div class="stat"><b>3rd</b><span>year · KMUTT</span></div>
   </div>
 </div></header>
 
 <main>
-<section id="games"><div class="wrap">
-  <div class="sec-head"><span class="num">01</span><h2>Game Design</h2>
-    <p>What I'm building now, a playable prototype we built in Unity, and a deep design doc for a roguelite.</p></div>
+<!-- 2. HIGHLIGHTED PROJECTS -->
+<section id="projects"><div class="wrap">
+  <div class="sec-head"><span class="num">02</span><h2>Highlighted Projects</h2>
+    <p>Personal projects I build outside class, and the class and team projects most related to game design.</p></div>
 
-  <!-- Dungeon Drift (in development) -->
+  <div class="sub-h">SIDE PROJECTS &amp; COMPETITIONS · OUTSIDE CLASS</div>
+
+  <!-- Dungeon Drift -->
   <article class="feature flip">
     <div class="media">
       <video src="media/dungeondrift.mp4" poster="media/dungeondrift_poster.jpg" controls muted playsinline preload="none"></video>
       <div class="caption"><span>▶ 90s capture: pick hero → fight → recruit → Ascendancy</span><span>Unity 6 · work in progress</span></div>
       <div class="nodemap" aria-label="Dungeon Drift run map: combat, rival, shop, master, event and boss nodes">
-      <div class="tower-title">DUNGEON DRIFT · RUN MAP</div>
-      <div class="tower-sub">You see the whole run. Pick the path, then let your party fight.</div>
-      <div class="nm-row"><div class="node b">BOSS</div></div>
-      <div class="nm-row"><div class="node e">RIVAL</div><div class="node s">SHOP</div><div class="node c">FIGHT</div></div>
-      <div class="nm-row"><div class="node c">FIGHT</div><div class="node m">MASTER</div><div class="node v">EVENT</div></div>
-      <div class="nm-row"><div class="node c">FIGHT</div><div class="node c">FIGHT</div></div>
-      <div class="nm-legend">
-        <span><b>107</b> skills</span><span><b>379</b> traits</span>
-        <span><b>66</b> items · <b>11</b> weapon types</span><span><b>27</b> enemies · <b>9</b> companions</span>
-      </div>
+        <div class="tower-title">DUNGEON DRIFT · RUN MAP</div>
+        <div class="tower-sub">You see the whole run. Pick the path, then let your party fight.</div>
+        <div class="nm-row"><div class="node b">BOSS</div></div>
+        <div class="nm-row"><div class="node e">RIVAL</div><div class="node s">SHOP</div><div class="node c">FIGHT</div></div>
+        <div class="nm-row"><div class="node c">FIGHT</div><div class="node m">MASTER</div><div class="node v">EVENT</div></div>
+        <div class="nm-row"><div class="node c">FIGHT</div><div class="node c">FIGHT</div></div>
+        <div class="nm-legend">
+          <span><b>107</b> skills</span><span><b>379</b> traits</span>
+          <span><b>66</b> items · <b>11</b> weapon types</span><span><b>27</b> enemies · <b>9</b> companions</span>
+        </div>
       </div>
     </div>
     <div>
@@ -214,32 +269,8 @@
     </div>
   </article>
 
-  <!-- Feywood -->
-  <article class="feature">
-    <div class="media">
-      <video src="media/feywood.mp4" poster="media/feywood_poster.jpg" controls muted playsinline preload="none"></video>
-      <div class="caption"><span>▶ 36s gameplay capture</span><span>Unity · Windows build</span></div>
-    </div>
-    <div>
-      <h3>Feywood</h3>
-      <div class="meta">
-        <span class="chip t">Playable prototype</span><span class="chip">2D action survival</span>
-        <span class="chip">Unity · C#</span><span class="chip">Team of 4</span><span class="chip">Nov–Dec 2024</span>
-      </div>
-      <p class="pitch">Our team's first game: simple controls, auto-attacking weapons and mounting chaos.
-         The identity we aimed for was <i>"a blend of whimsy and intensity."</i></p>
-      <p class="role"><b>My part:</b> I implemented the XP-gem <b>magnet pickup</b> in C# (its pull radius scales with the player's Magnet stat),
-         and researched game-design techniques, color schemes, and character and item design.</p>
-      <ul class="points">
-        <li><b>What's in it</b>Main menu, character select, weapons that level up (damage, extra projectiles, area), 9 passive items, XP gems with drop rates, and an endless chunk-based map.</li>
-      </ul>
-      <p class="note"><b>Post-mortem:</b> it plays from start to finish but was never balanced, and it still has known bugs. The next step would be tuning the waves and enemy stats.</p>
-      <div class="links"><a href="https://www.canva.com/design/DAGW6xRjEM4/sv91e_ii9r682GKRs3GmXA/view" target="_blank" rel="noopener">Project slides ↗</a></div>
-    </div>
-  </article>
-
   <!-- Unknown To Depth -->
-  <article class="feature flip">
+  <article class="feature">
     <div class="media tower" aria-label="The 10 floors of Unknown To Depth">
       <div class="tower-title">UNKNOWN TO DEPTH</div>
       <div class="tower-sub">Climb 10 worlds. Die, loop, and the floor changes.</div>
@@ -260,10 +291,12 @@
       <h3>Unknown To Depth</h3>
       <div class="meta">
         <span class="chip t">Concept &amp; design doc</span><span class="chip">Roguelite · time loop</span>
-        <span class="chip">Team Game4Life (5)</span><span class="chip">37 slides</span><span class="chip">2023</span>
+        <span class="chip">depa Game Accelerator entry</span><span class="chip">Team Game4Life (5)</span><span class="chip">2023</span>
       </div>
       <p class="pitch">A cursed hero respawns in <i>the Depth</i> every time he dies, and each death reshapes the floor through a butterfly effect.
          To break the curse he has to climb a tower of 10 worlds.</p>
+      <p class="role"><b>My part:</b> I designed the core game loop and the mechanics: the two-currency economy, the room system and meta-progression.
+         We didn't make the shortlist, but writing a 37-slide pitch taught me to explain a design clearly enough for someone else to judge it.</p>
       <ul class="points">
         <li><b>Two-currency economy</b>Souls buy permanent upgrades and hired troops; Coins buy shop items for the current run. Artifacts, cores and runes add stat boosts, weapon evolution and perks.</li>
         <li><b>Readable room choices</b>A symbol on each door shows what's behind it (shop, perk, soul room, casino, puzzle or chest), so every path is a risk/reward decision.</li>
@@ -273,17 +306,59 @@
       <div class="links"><a href="https://www.canva.com/design/DAFjdHIb3l0/nLtrp3_wCuFIx3wihWGA6Q/view" target="_blank" rel="noopener">View the 37-slide design deck ↗</a></div>
     </div>
   </article>
+
+  <div class="sub-h">CLASS &amp; TEAM PROJECTS</div>
+
+  <!-- Feywood -->
+  <article class="feature flip">
+    <div class="media">
+      <video src="media/feywood.mp4" poster="media/feywood_poster.jpg" controls muted playsinline preload="none"></video>
+      <div class="caption"><span>▶ 36s gameplay capture</span><span>Unity · Windows build</span></div>
+    </div>
+    <div>
+      <h3>Feywood</h3>
+      <div class="meta">
+        <span class="chip t">Playable prototype</span><span class="chip">2D action survival</span>
+        <span class="chip">Unity · C#</span><span class="chip">Team of 4</span><span class="chip">Engineering Exploration · 1st year</span><span class="chip">Nov–Dec 2024</span>
+      </div>
+      <p class="pitch">Our team's first game: simple controls, auto-attacking weapons and mounting chaos.
+         The identity we aimed for was <i>"a blend of whimsy and intensity."</i></p>
+      <div class="prr">
+        <div><b>Process</b>We researched game-design techniques, color schemes and character and item design, then built it in Unity over about 4 weeks. It was my first time using Unity, so I learned it from YouTube tutorials as I went.</div>
+        <div><b>My role</b>I wrote the game's code in C#: movement, weapons, enemies, the XP-gem magnet pickup (its radius scales with the Magnet stat) and the menus. I also worked on the design research.</div>
+        <div><b>Result</b>A playable game with a main menu, character select, weapons that level up, 9 passive items, XP drops and an endless map. It was never balanced, and the next step would be tuning the waves and enemy stats.</div>
+      </div>
+      <div class="links" style="margin-top:16px"><a href="https://www.canva.com/design/DAGW6xRjEM4/sv91e_ii9r682GKRs3GmXA/view" target="_blank" rel="noopener">Project slides ↗</a></div>
+    </div>
+  </article>
+
+  <div class="grid">
+    <div class="card"><h4>ModDer · UX/UI</h4><div class="sub">CPE 123 · UI Designer · team of 4 · Figma · 2024</div>
+      <div class="prr">
+        <div><b>Process</b>Persona → storyboard → MVP list → lo-fi → hi-fi → user evaluation</div>
+        <div><b>My role</b>UI Designer: hi-fi Figma screens and UI mock-up</div>
+        <div><b>Result</b>A campus social app prototype, revised after evaluation. <a href="https://www.canva.com/design/DAGWwX4215o/xOgQmDO4dX1jsOYuBrN6AQ/view" target="_blank" rel="noopener">Slides ↗</a></div>
+      </div></div>
+    <div class="card"><h4>TokTickIT · Software Eng.</h4><div class="sub">CPE 334 · 2026</div>
+      <div class="prr">
+        <div><b>Process</b>4 labs plus a team project run in 3 sprints</div>
+        <div><b>My role</b>Built a full-stack ticketing app and ran the final regression</div>
+        <div><b>Result</b>Roles, staff and admin screens, dashboards; CI/CD on Docker and GCP</div>
+      </div></div>
+  </div>
 </div></section>
 
-<section id="qa"><div class="wrap">
-  <div class="sec-head"><span class="num">02</span><h2>QA Work</h2>
-    <p>Same mindset as playtesting: find the edge cases, the sequence breaks, and the "what if the player spams this button?"</p></div>
+<!-- 3. ACTIVITIES -->
+<section id="activities"><div class="wrap">
+  <div class="sec-head"><span class="num">03</span><h2>Extracurricular Activities</h2>
+    <p>What I do outside class, and what I learned from it.</p></div>
+
   <div class="qa">
     <div>
-      <h3>BangMod Hackathon 2026</h3>
-      <div class="meta"><span class="chip t">QA Tester</span><span class="chip">Aug–Sep 2026</span><span class="chip">KMUTT Engineering</span></div>
-      <p class="pitch" style="font-size:16.5px">Pre-launch testing of the website for a national C/C++ programming competition: the landing pages,
-         the past-event archive, and the full registration flow (Google sign-in, multi-step form, document uploads, PDPA consent and admin approval).</p>
+      <h3>BangMod Hackathon 2026: QA Team</h3>
+      <div class="meta"><span class="chip t">QA Tester · staff</span><span class="chip">Aug–Sep 2026</span><span class="chip">Faculty of Engineering, KMUTT</span></div>
+      <p class="pitch" style="font-size:16.5px">The faculty's national C/C++ programming competition for high-school students. Before registration opened, I tested
+         the event website and the full registration flow: Google sign-in, a multi-step form, document uploads, PDPA consent and admin approval.</p>
       <div class="mini-stats">
         <div><b>63</b><span>cases tracked</span></div>
         <div><b>15</b><span>owned by me</span></div>
@@ -304,45 +379,60 @@
       </table>
     </div>
   </div>
+  <div class="learn">
+    <div><b>Teamwork</b>Three testers shared one QA sheet, each owning cases and updating status, so nothing was tested twice or missed.</div>
+    <div><b>Writing my own test cases</b>I designed my cases around what real students would do: hit Back, spam Submit, upload the wrong file, or submit at the last second.</div>
+    <div><b>Talking to developers</b>When I found a problem I reported it straight to the dev team with the steps to reproduce it, and I learned to explain a bug so it gets fixed and not argued about.</div>
+  </div>
+  <!-- ponytail: add more activity cards here (Open House, camps, club roles) once the user lists them -->
 </div></section>
 
-<section id="more"><div class="wrap">
-  <div class="sec-head"><span class="num">03</span><h2>Other Projects</h2><p>Coursework that feeds into how I design and test.</p></div>
-  <div class="grid">
-    <div class="card"><h4>ModDer</h4><div class="sub">UI Designer · team of 4 · Figma · 2024</div>
-      <p>A campus social app ("Your Campus, Your Friends, Your Moment"). We went from persona and storyboard to lo-fi and hi-fi Figma prototypes, then revised after user evaluation.
-         <a href="https://www.canva.com/design/DAGWwX4215o/xOgQmDO4dX1jsOYuBrN6AQ/view" target="_blank" rel="noopener">Slides ↗</a></p></div>
-    <div class="card"><h4>TokTickIT</h4><div class="sub">Software Engineering · 2026</div>
-      <p>A full-stack IT ticketing app with roles, staff and admin screens, dashboards and a final regression pass. The team version adds sprints, CI/CD, Docker and GCP.</p></div>
-    <div class="card"><h4>Competitor Research</h4><div class="sub">Digital Product Innovation · team of 5 · 2026</div>
-      <p>Interviewed users to find pain points, compared competing products and reframed the findings into product concepts.</p></div>
-    <div class="card"><h4>Data Analysis &amp; ML</h4><div class="sub">Data Models · team of 6 · 2026</div>
-      <p>Data cleaning, visualization and a classification model in Python.</p></div>
+<!-- 4. SKILLS -->
+<section id="skills"><div class="wrap">
+  <div class="sec-head"><span class="num">04</span><h2>Skills</h2><p>Tools are marked with my honest level. Design skills are shown through the projects above.</p></div>
+  <div class="skill-table">
+    <div class="card"><h4>Game Design &amp; QA</h4><ul>
+      <li>Game concept &amp; design docs</li>
+      <li>Core loops, progression &amp; economy</li>
+      <li>Balance tuning by measurement</li>
+      <li>Test case design &amp; bug reporting</li>
+    </ul></div>
+    <div class="card"><h4>Game Dev &amp; Design Tools</h4><ul>
+      <li>Unity <span class="lvl b">Basic</span></li>
+      <li>Figma <span class="lvl b">Basic</span></li>
+      <li>Canva <span class="lvl b">Basic</span></li>
+      <li>Miro <span class="lvl b">Basic</span></li>
+      <li>Excel / Google Sheets <span class="lvl b">Basic</span></li>
+    </ul></div>
+    <div class="card"><h4>Programming &amp; Tech</h4><ul>
+      <li>C# <span class="lvl b">Basic</span></li>
+      <li>C <span class="lvl b">Basic</span></li>
+      <li>Python <span class="lvl b">Basic</span></li>
+      <li>SQL <span class="lvl b">Basic</span></li>
+      <li>Git / GitHub <span class="lvl b">Basic</span></li>
+      <li>AI coding tools (Claude Code, Codex) <span class="lvl b">Basic</span></li>
+    </ul></div>
+    <div class="card"><h4>Languages</h4><ul>
+      <li>Thai <span class="lvl n">Native</span></li>
+      <li>English</li>
+    </ul></div>
   </div>
 </div></section>
 
-<section id="skills" class="skills"><div class="wrap">
-  <div class="sec-head"><span class="num">04</span><h2>Skills</h2></div>
-  <div class="grid">
-    <div class="card"><h4>Game Design</h4><ul><li>Design docs</li><li>Core loops</li><li>Progression</li><li>Economy</li><li>Level themes</li><li>Unity</li></ul></div>
-    <div class="card"><h4>QA</h4><ul><li>Test case design</li><li>Regression</li><li>Edge &amp; negative cases</li><li>Cross-device</li><li>Bug reports</li></ul></div>
-    <div class="card"><h4>UX / UI</h4><ul><li>Personas</li><li>Storyboards</li><li>Wireframes</li><li>Prototyping</li><li>Figma</li><li>Miro</li></ul></div>
-    <div class="card"><h4>Tech</h4><ul><li>C#</li><li>C</li><li>Python</li><li>SQL</li><li>Git</li><li>Docker</li><li>GCP</li></ul></div>
-  </div>
-</div></section>
-
+<!-- 5. CONTACT -->
 <section class="contact" id="contact"><div class="wrap">
-  <div class="eyebrow">▸ Player 2, press start</div>
-  <h2>Let's build something fun.</h2>
-  <p>Looking for a Game Designer internship (QA involved), on-site or online.</p>
-  <div class="btns">
-    <a class="btn primary" href="mailto:ninjomuda@gmail.com">ninjomuda@gmail.com</a>
-    <a class="btn ghost" href="resume.html">Resume</a>
-    <a class="btn ghost" href="https://github.com/NinjoMUDA" target="_blank" rel="noopener">GitHub ↗</a>
+  <div class="eyebrow">▸ 05 · Contact</div>
+  <h2>Player 2, press start.</h2>
+  <p>Open to a Game Designer internship (QA involved), on-site or online.</p>
+  <div class="contact-grid">
+    <a href="mailto:ninjomuda@gmail.com"><small>Email</small><span>ninjomuda@gmail.com</span></a>
+    <a href="https://github.com/NinjoMUDA" target="_blank" rel="noopener"><small>GitHub</small><span>github.com/NinjoMUDA</span></a>
+    <a href="resume.html"><small>Resume</small><span>View / download ↗</span></a>
+    <div><small>Phone</small><span>On my resume (PDF)</span></div>
   </div>
 </div></section>
 </main>
 
-<footer>© 2026 Dechayut Panyawutvorakul · Built by hand, no frameworks</footer>
+<footer>© 2026 Dechayut Panyawutvorakul · Game Design &amp; QA portfolio</footer>
 </body>
 </html>
