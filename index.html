@@ -76,15 +76,32 @@
   .chip{font-size:13px;padding:4px 11px;border-radius:999px;background:rgba(139,92,246,.14);color:#cdbcff;border:1px solid rgba(139,92,246,.28)}
   .chip.t{background:rgba(0,201,201,.1);color:#7ff0f0;border-color:rgba(0,201,201,.28)}
   .pitch{font-size:18px;margin:0 0 20px}
-  .points{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:12px}
-  .points li{padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:15.5px;line-height:1.55}
-  .points li b{display:block;font-family:var(--display);font-size:16px;margin-bottom:2px;color:var(--text)}
   .role{border-left:3px solid var(--teal);padding:4px 0 4px 14px;margin:0 0 20px;font-size:15.5px}
   .role b{color:var(--teal)}
   .note{font-size:14.5px;color:var(--muted);margin:0 0 18px}
   .links a{font-weight:600;margin-right:18px;font-size:15px}
 
   /* Unknown To Depth "tower" visual */
+  /* project facts: label | text rows */
+  .prr{margin:14px 0 0;border-top:1px solid var(--line)}
+  .prr>div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
+  .prr b{font-size:12px;letter-spacing:.6px;text-transform:uppercase;color:var(--teal);font-weight:600;padding-top:3px}
+  .prr span{color:#d4cfe4}
+  @media (max-width:560px){.prr>div{grid-template-columns:1fr;gap:2px}}
+  .card .prr>div{grid-template-columns:96px 1fr;font-size:14px;padding:9px 0}
+  /* collapsible highlights */
+  details.more{margin:18px 0 6px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+  details.more summary{cursor:pointer;list-style:none;padding:13px 16px;font-weight:600;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary::after{content:"+";font:700 18px var(--display);color:var(--teal)}
+  details.more[open] summary::after{content:"–"}
+  details.more[open] summary{border-bottom:1px solid var(--line)}
+  .points{list-style:none;margin:0;padding:6px 16px 10px}
+  .points li{padding:10px 0 10px 18px;position:relative;font-size:14.5px;line-height:1.6;color:#cfcae0;border-bottom:1px dashed var(--line)}
+  .points li:last-child{border-bottom:0}
+  .points li::before{content:"";position:absolute;left:0;top:18px;width:7px;height:7px;border-radius:2px;background:var(--teal)}
+  .points li b{color:var(--text);margin-right:4px}
+  .points li b::after{content:" —";color:var(--muted);font-weight:400}
   /* Dungeon Drift node-map visual */
   .nodemap{padding:26px;background:linear-gradient(160deg,#0b2a2e 0%,#120c26 60%,#2a0d5c 100%)}
   .nm-row{display:flex;justify-content:center;gap:14px;margin:0 0 14px}
@@ -151,9 +168,6 @@
   .panel p{margin:0;font-size:15.5px;color:#cfcae0}
   .panel.avail{border-color:rgba(0,201,201,.35);background:linear-gradient(160deg,rgba(0,201,201,.08),var(--bg2))}
   .avail .when{font:700 24px/1.2 var(--display);color:var(--text);margin:4px 0 6px}
-  .prr{display:grid;gap:8px;margin-top:12px}
-  .prr div{font-size:14.5px;color:#cfcae0}
-  .prr b{display:block;color:var(--teal);font-weight:600;font-size:13px;letter-spacing:.3px;text-transform:uppercase;margin-bottom:2px}
   .learn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 0}
   @media (max-width:720px){.learn{grid-template-columns:1fr}}
   .learn div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;color:#cfcae0}
@@ -251,21 +265,20 @@
       <p class="pitch">You play a god who isn't at full power yet. You send a human party into the dungeon, arrange them before each fight,
          and then they battle on their own. Faith you bring back makes your god stronger for the next run.</p>
       <div class="prr">
-        <div><b>Why</b>I wanted a game about drafting a party and building characters that click together in team fights. Auto-chess games
+        <div><b>Why</b><span>I wanted a game about drafting a party and building characters that click together in team fights. Auto-chess games
            do this, but they're competitive matches where your power comes from a random shop each round. I wanted the same team-building
-           in a single-player roguelike, where your build grows across a whole run. No game did that the way I wanted, so I started making one.</div>
-        <div><b>Inspired by</b>Dota 2 custom auto-battlers (the fights), Slay the Spire (the node map and reward picks), Path of Exile 2 (Ascendancy and item depth)</div>
-        <div><b>My role</b>I lead the design and balance: the world pillars, more than 50 numbered design decisions, and every tuning pass.
-           The code is written with AI coding agents (Claude, Codex) that I direct and review. Most of the art is by my teammate Arth.</div>
-        <div><b>Status</b>In development. I'm still reworking systems because the core mechanic doesn't feel good enough yet, and getting it right comes before adding content.</div>
+           in a single-player roguelike, where your build grows across a whole run. No game did that the way I wanted, so I started making one.</span></div>
+        <div><b>Inspired by</b><span>Dota 2 custom auto-battlers (the fights), Slay the Spire (the node map and reward picks), Path of Exile 2 (Ascendancy and item depth)</span></div>
+        <div><b>My role</b><span>I lead the design and balance: the world pillars, more than 50 numbered design decisions, and every tuning pass.
+           The code is written with AI coding agents (Claude, Codex) that I direct and review. Most of the art is by my teammate Arth.</span></div>
+        <div><b>Status</b><span>In development. I'm still reworking systems because the core mechanic doesn't feel good enough yet, and getting it right comes before adding content.</span></div>
       </div>
-      <div style="height:18px"></div>
-      <ul class="points">
+      <details class="more"><summary>Design highlights (4)</summary><ul class="points">
         <li><b>Theme that justifies the mechanic</b>Auto-battle is usually a limitation. Here the player is a god, so a god doesn't fight; it plans, blesses and chooses the path. The constraint becomes the fantasy.</li>
         <li><b>Balance by measurement</b>I tune with recorded team fights, not gut feel: Bow range 6.5 → 8 and Rifle 7 → 9 until Rifle ≈ Bow, Mace stun 20% → 30%. I also flagged Greatsword T4 as an outlier (49 DPS vs 22–38).</li>
         <li><b>Cutting what didn't work</b>I tried Tug-of-War lanes and a TFT-style grid, cut both, and moved to free-form clashes where formation still matters: the front line walls off the back row.</li>
         <li><b>Reward loop</b>Every fight ends in a pick screen (gold, rival loot, boss artifact 1-of-3), then a skill pick and a level-up summary, before you return to the map.</li>
-      </ul>
+      </ul></details>
     </div>
   </article>
 
@@ -296,19 +309,18 @@
       <p class="pitch">A cursed hero respawns in <i>the Depth</i> every time he dies, and each death reshapes the floor through a butterfly effect.
          To break the curse he has to climb a tower of 10 worlds.</p>
       <div class="prr">
-        <div><b>Inspired by</b>Hades: dying is part of the loop, and every run makes you stronger.</div>
-        <div><b>My role</b>I designed the core game loop and the mechanics: the two-currency economy, the room system and meta-progression.</div>
-        <div><b>Result</b>We entered depa Game Accelerator with a 37-slide pitch and didn't make the shortlist.</div>
-        <div><b>What I learned</b>We thought too big: 10 floors, a deep lore and lots of features, while the most important part, the
+        <div><b>Inspired by</b><span>Hades: dying is part of the loop, and every run makes you stronger.</span></div>
+        <div><b>My role</b><span>I designed the core game loop and the mechanics: the two-currency economy, the room system and meta-progression.</span></div>
+        <div><b>Result</b><span>We entered depa Game Accelerator with a 37-slide pitch and didn't make the shortlist.</span></div>
+        <div><b>What I learned</b><span>We thought too big: 10 floors, a deep lore and lots of features, while the most important part, the
            moment-to-moment gameplay, got the least explanation even though it needed the most. Now I start small, nail the core loop first,
-           and design systems that feed into each other instead of piling them up.</div>
+           and design systems that feed into each other instead of piling them up.</span></div>
       </div>
-      <div style="height:18px"></div>
-      <ul class="points">
+      <details class="more"><summary>Design highlights (3)</summary><ul class="points">
         <li><b>Two-currency economy</b>Souls buy permanent upgrades and hired troops; Coins buy shop items for the current run. Artifacts, cores and runes add stat boosts, weapon evolution and perks.</li>
         <li><b>Readable room choices</b>A symbol on each door shows what's behind it (shop, perk, soul room, casino, puzzle or chest), so every path is a risk/reward decision.</li>
         <li><b>Meta-progression</b>Perk rooms you clear stay unlocked from floor 1 on the next run, and perk slots grow from 1 to 4.</li>
-      </ul>
+      </ul></details>
       <div class="links"><a href="https://www.canva.com/design/DAFjdHIb3l0/nLtrp3_wCuFIx3wihWGA6Q/view" target="_blank" rel="noopener">View the 37-slide design deck ↗</a></div>
     </div>
   </article>
@@ -330,15 +342,15 @@
       <p class="pitch">Our team's first game: simple controls, auto-attacking weapons and mounting chaos.
          The identity we aimed for was <i>"a blend of whimsy and intensity."</i></p>
       <div class="prr">
-        <div><b>Inspired by</b>Vampire Survivors</div>
-        <div><b>Process</b>A 2-week sprint. It was my first time using Unity, so I learned it from YouTube tutorials while we built it,
-           alongside research on game-design techniques, color schemes and character and item design.</div>
-        <div><b>My role</b>I wrote the game's code in C#: movement, weapons, enemies, the XP-gem magnet pickup (its radius scales with the Magnet stat) and the menus.</div>
-        <div><b>Result</b>A playable game with a main menu, character select, weapons that level up, 9 passive items and an endless map. We showed it
+        <div><b>Inspired by</b><span>Vampire Survivors</span></div>
+        <div><b>Process</b><span>A 2-week sprint. It was my first time using Unity, so I learned it from YouTube tutorials while we built it,
+           alongside research on game-design techniques, color schemes and character and item design.</span></div>
+        <div><b>My role</b><span>I wrote the game's code in C#: movement, weapons, enemies, the XP-gem magnet pickup (its radius scales with the Magnet stat) and the menus.</span></div>
+        <div><b>Result</b><span>A playable game with a main menu, character select, weapons that level up, 9 passive items and an endless map. We showed it
            at the Engineering Exploration Expo. Feedback from players and our instructor matched what we already suspected: with more time
-           and skill it could have been much more polished.</div>
-        <div><b>What I learned</b>A game you can play isn't the same as a game that's fun. Balance is where the fun comes from, and we had no time left for it.
-           I also learned to pick up a new engine fast, split work across a team with Git, and plan around a hard deadline.</div>
+           and skill it could have been much more polished.</span></div>
+        <div><b>What I learned</b><span>A game you can play isn't the same as a game that's fun. Balance is where the fun comes from, and we had no time left for it.
+           I also learned to pick up a new engine fast, split work across a team with Git, and plan around a hard deadline.</span></div>
       </div>
       <div class="links" style="margin-top:16px"><a href="https://www.canva.com/design/DAGW6xRjEM4/sv91e_ii9r682GKRs3GmXA/view" target="_blank" rel="noopener">Project slides ↗</a></div>
     </div>
@@ -347,17 +359,17 @@
   <div class="grid">
     <div class="card"><h4>ModDer · UX/UI</h4><div class="sub">CPE 123 · UI Designer · team of 4 · Figma · 2024</div>
       <div class="prr">
-        <div><b>Problem</b>First-year students who want to meet new people on campus</div>
-        <div><b>Process</b>Persona → storyboard → MVP list → lo-fi → hi-fi → user evaluation</div>
-        <div><b>My role</b>UI Designer: hi-fi Figma screens and the UI mock-up</div>
-        <div><b>Result</b>A campus social app prototype, revised after user evaluation. <a href="https://www.canva.com/design/DAGWwX4215o/xOgQmDO4dX1jsOYuBrN6AQ/view" target="_blank" rel="noopener">Slides ↗</a></div>
-        <div><b>What carries over to games</b>Design for the real player (persona), not yourself; prototype before building; test with users, then fix (the same as playtesting); and keep UI easy to read (HUDs, tooltips).</div>
+        <div><b>Problem</b><span>First-year students who want to meet new people on campus</span></div>
+        <div><b>Process</b><span>Persona → storyboard → MVP list → lo-fi → hi-fi → user evaluation</span></div>
+        <div><b>My role</b><span>UI Designer: hi-fi Figma screens and the UI mock-up</span></div>
+        <div><b>Result</b><span>A campus social app prototype, revised after user evaluation. <a href="https://www.canva.com/design/DAGWwX4215o/xOgQmDO4dX1jsOYuBrN6AQ/view" target="_blank" rel="noopener">Slides ↗</a></span></div>
+        <div><b>What carries over to games</b><span>Design for the real player (persona), not yourself; prototype before building; test with users, then fix (the same as playtesting); and keep UI easy to read (HUDs, tooltips).</span></div>
       </div></div>
     <div class="card"><h4>TokTickIT · Software Eng.</h4><div class="sub">CPE 334 · 2026</div>
       <div class="prr">
-        <div><b>Goal</b>Learn a real team workflow on GitHub and how to use AI tools well in development</div>
-        <div><b>Process</b>4 individual labs, then a team project in 3 sprints</div>
-        <div><b>Result</b>A full-stack IT ticketing app with roles, dashboards and a final regression pass. It gave me the GitHub and AI-assisted workflow that I build all my later work on.</div>
+        <div><b>Goal</b><span>Learn a real team workflow on GitHub and how to use AI tools well in development</span></div>
+        <div><b>Process</b><span>4 individual labs, then a team project in 3 sprints</span></div>
+        <div><b>Result</b><span>A full-stack IT ticketing app with roles, dashboards and a final regression pass. It gave me the GitHub and AI-assisted workflow that I build all my later work on.</span></div>
       </div></div>
   </div>
 </div></section>
@@ -374,9 +386,9 @@
       <p class="pitch" style="font-size:16.5px">The faculty's national C/C++ programming competition for high-school students. Before registration opened, I tested
          the event website and the full registration flow: Google sign-in, a multi-step form, document uploads, PDPA consent and admin approval.</p>
       <div class="mini-stats">
-        <div><b>63</b><span>cases tracked</span></div>
-        <div><b>15</b><span>owned by me</span></div>
-        <div><b>1</b><span>flaw found</span></div>
+        <div><b>63</b><span><span>cases tracked</span></span></div>
+        <div><b>15</b><span><span>owned by me</span></span></div>
+        <div><b>1</b><span><span>flaw found</span></span></div>
       </div>
     </div>
     <div class="table">
@@ -394,9 +406,9 @@
     </div>
   </div>
   <div class="learn">
-    <div><b>Teamwork</b>Three testers shared one QA sheet, each owning cases and updating status, so nothing was tested twice or missed.</div>
-    <div><b>Writing my own test cases</b>I designed my cases around what real students would do: hit Back, spam Submit, upload the wrong file, or submit at the last second.</div>
-    <div><b>Talking to developers</b>When I found a problem I reported it straight to the dev team with the steps to reproduce it, and I learned to explain a bug so it gets fixed and not argued about.</div>
+    <div><b>Teamwork</b><span>Three testers shared one QA sheet, each owning cases and updating status, so nothing was tested twice or missed.</span></div>
+    <div><b>Writing my own test cases</b><span>I designed my cases around what real students would do: hit Back, spam Submit, upload the wrong file, or submit at the last second.</span></div>
+    <div><b>Talking to developers</b><span>When I found a problem I reported it straight to the dev team with the steps to reproduce it, and I learned to explain a bug so it gets fixed and not argued about.</span></div>
   </div>
   <!-- ponytail: add more activity cards here (Open House, camps, club roles) once the user lists them -->
 </div></section>
