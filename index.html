@@ -164,6 +164,11 @@
   .panel p{margin:0;font-size:15.5px;color:#cfcae0}
   .panel.avail{border-color:rgba(0,201,201,.35);background:linear-gradient(160deg,rgba(0,201,201,.08),var(--bg2))}
   .avail .when{font:700 24px/1.2 var(--display);color:var(--text);margin:4px 0 6px}
+  .bug{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;margin:28px 0 0;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+  .bug video{width:100%;border-radius:10px;background:#000;display:block}
+  .bug h4{font:700 20px/1.25 var(--display);margin:0 0 8px}
+  .bug p{margin:0 0 10px;font-size:15px;color:#cfcae0}
+  @media (max-width:860px){.bug{grid-template-columns:1fr;gap:18px}}
   .learn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 0}
   @media (max-width:720px){.learn{grid-template-columns:1fr}}
   .learn div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;color:#cfcae0}
@@ -380,14 +385,14 @@
       <div class="mini-stats">
         <div><b>63</b><span><span>cases tracked</span></span></div>
         <div><b>15</b><span><span>owned by me</span></span></div>
-        <div><b>1</b><span><span>flaw found</span></span></div>
+        <div><b>2</b><span><span>issues found</span></span></div>
       </div>
     </div>
     <div class="table">
       <table>
         <tr><th>ID</th><th>Test</th><th>What I checked</th><th>Result</th></tr>
         <tr><td>REG-002</td><td>Happy path</td><td>Google sign-in → register → finish</td><td><span class="badge pass">Pass</span></td></tr>
-        <tr><td>REG-007</td><td>Back button</td><td>Going back keeps earlier answers</td><td><span class="badge pass">Pass</span></td></tr>
+        <tr><td>REG-007</td><td>Back button</td><td>Going back keeps earlier answers</td><td><span class="badge pass">Pass after fix</span></td></tr>
         <tr><td>REG-009</td><td>Double submit</td><td>Spam-clicking Submit → only 1 entry</td><td><span class="badge pass">Pass</span></td></tr>
         <tr><td>REG-019</td><td>Session timeout</td><td>Expired session → redirect to login</td><td><span class="badge pass">Pass</span></td></tr>
         <tr><td>REG-023</td><td>Date bounds</td><td>Birthdate picker accepts future dates</td><td><span class="badge flaw">Flaw found</span></td></tr>
@@ -395,6 +400,16 @@
         <tr><td>REG-032</td><td>Deadline cutoff</td><td>Submitting exactly at closing time</td><td><span class="badge pass">Pass</span></td></tr>
         <tr><td>REG-033</td><td>Mobile</td><td>Layout, form and uploads on a phone</td><td><span class="badge pass">Pass</span></td></tr>
       </table>
+    </div>
+  </div>
+  <div class="bug">
+    <video aria-label="Screen recording: the uploaded team picture disappears after pressing Back" src="media/bangmod_back_bug.mp4" poster="media/bangmod_back_bug_poster.jpg" controls muted playsinline preload="none"></video>
+    <div>
+      <div class="sub-h" style="margin:0 0 12px">BUG I CAUGHT · REG-007</div>
+      <h4>Going back lost the team picture</h4>
+      <p>I uploaded a team picture, went to the next step, then pressed Back. The team name and school were still there, but the picture was gone,
+         so a team could lose its picture without noticing.</p>
+      <p>I recorded this clip, sent it to the developers with the steps to reproduce it, and after their fix I ran the case again. It passed.</p>
     </div>
   </div>
   <div class="learn">
