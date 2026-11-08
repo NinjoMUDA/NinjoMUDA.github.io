@@ -65,10 +65,9 @@
   /* project feature */
   .feature{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start;margin-bottom:64px}
   .feature.flip{grid-template-columns:1fr 1.15fr}
-  .feature.flip .media{order:2}
-  @media (max-width:860px){.feature,.feature.flip{grid-template-columns:1fr;gap:24px}.feature.flip .media{order:0}}
-  .media{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card);position:sticky;top:78px}
-  @media (max-width:860px){.media{position:static}}
+  .feature.flip .media,.feature.flip .media-col{order:2}
+  @media (max-width:860px){.feature,.feature.flip{grid-template-columns:1fr;gap:24px}.feature.flip .media,.feature.flip .media-col{order:0}}
+  .media{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
   .media video{width:100%;aspect-ratio:16/10;object-fit:cover;background:#000}
   .caption{padding:12px 16px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
   h3{font:700 30px/1.15 var(--display);margin:0 0 6px;letter-spacing:-.3px}
@@ -230,9 +229,21 @@
 
   <!-- Dungeon Drift -->
   <article class="feature flip">
+    <div class="media-col">
     <div class="media">
       <video src="media/dungeondrift.mp4" poster="media/dungeondrift_poster.jpg" controls muted playsinline preload="none"></video>
       <div class="caption"><span>▶ 90s capture: pick hero → fight → recruit → Ascendancy</span><span>Unity 6 · work in progress</span></div>
+    </div>
+      <details class="more"><summary>Design highlights (4)</summary><ul class="points">
+        <li><b>Why the player is a god</b>Auto-battlers can feel like you're just watching. I wanted a reason for that, so I made the player a god.
+          Gods don't swing swords. They pick the team, hand out blessings and decide where the party goes next, and that's exactly what you do in the game.</li>
+        <li><b>Testing before tuning</b>When a weapon feels off, I don't just guess. I run the same team fight a few times, write down what happened, and only then change something.
+          Doing it this way showed me that two ranged weapons were doing almost the same job, and that one melee weapon was far ahead of the rest, so that's next on my list.</li>
+        <li><b>Three tries at combat</b>I first tried Tug-of-War lanes, then a grid like TFT. Neither felt right, so I scrapped both.
+          Now units move freely and clash in the middle, but where you place them still matters: your front line keeps enemies off the back row.</li>
+        <li><b>What happens after a fight</b>You get a reward screen: gold from normal fights, one piece of loot from a rival party, or a pick of 1 out of 3 artifacts from a boss.
+          Then you choose a skill, see what your heroes gained from leveling up, and head back to the map.</li>
+      </ul></details>
     </div>
     <div>
       <h3>Dungeon Drift</h3>
@@ -251,16 +262,6 @@
            The code is written with AI coding agents (Claude, Codex) that I direct and review. Most of the art is by my teammate Arth.</span></div>
         <div><b>Status</b><span>In development. I'm still reworking systems because the core mechanic doesn't feel good enough yet, and getting it right comes before adding content.</span></div>
       </div>
-      <details class="more"><summary>Design highlights (4)</summary><ul class="points">
-        <li><b>Why the player is a god</b>Auto-battlers can feel like you're just watching. I wanted a reason for that, so I made the player a god.
-          Gods don't swing swords. They pick the team, hand out blessings and decide where the party goes next, and that's exactly what you do in the game.</li>
-        <li><b>Testing before tuning</b>When a weapon feels off, I don't just guess. I run the same team fight a few times, write down what happened, and only then change something.
-          Doing it this way showed me that two ranged weapons were doing almost the same job, and that one melee weapon was far ahead of the rest, so that's next on my list.</li>
-        <li><b>Three tries at combat</b>I first tried Tug-of-War lanes, then a grid like TFT. Neither felt right, so I scrapped both.
-          Now units move freely and clash in the middle, but where you place them still matters: your front line keeps enemies off the back row.</li>
-        <li><b>What happens after a fight</b>You get a reward screen: gold from normal fights, one piece of loot from a rival party, or a pick of 1 out of 3 artifacts from a boss.
-          Then you choose a skill, see what your heroes gained from leveling up, and head back to the map.</li>
-      </ul></details>
     </div>
   </article>
 
