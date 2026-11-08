@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dechayut Panyawutvorakul · Game Designer (QA)</title>
 <meta name="description" content="Game design & QA portfolio of Dechayut Panyawutvorakul, Computer Engineering student at KMUTT.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23491193'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='700' font-size='19' fill='%2300C9C9'%3ED%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ninjomuda.github.io/">
+<meta property="og:title" content="Dechayut Panyawutvorakul · Game Designer (QA)">
+<meta property="og:description" content="Game design & QA portfolio: Dungeon Drift, Unknown To Depth, Feywood and hands-on QA at BangMod Hackathon 2026.">
+<meta property="og:image" content="https://ninjomuda.github.io/media/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -45,6 +52,7 @@
   @media (max-width:700px){.hero-top{flex-direction:column-reverse;align-items:flex-start;gap:20px}.me{width:96px;border-radius:12px}}
   h1{font:700 clamp(40px,7vw,76px)/1.02 var(--display);margin:14px 0 18px;letter-spacing:-1.5px}
   h1 span{background:linear-gradient(90deg,#c4b5fd,var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{font:600 clamp(18px,2.4vw,22px)/1.3 var(--display);color:var(--teal);margin:-4px 0 14px}
   .lead{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:620px;margin:0 0 30px}
   .lead b{color:var(--text);font-weight:600}
   .btns{display:flex;gap:12px;flex-wrap:wrap}
@@ -82,6 +90,7 @@
   .role b{color:var(--teal)}
   .note{font-size:14.5px;color:var(--muted);margin:0 0 18px}
   .links a{font-weight:600;margin-right:18px;font-size:15px}
+  .links a,.prr a{display:inline-block;padding:4px 0}
 
   /* project facts: label | text rows */
   .prr{margin:14px 0 0;border-top:1px solid var(--line)}
@@ -121,7 +130,7 @@
   th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
   tr:last-child td{border-bottom:0}
   th{font-weight:500;color:var(--muted);font-size:13px;background:rgba(255,255,255,.02)}
-  td:first-child{font:9px/2 var(--pixel);color:var(--purple);white-space:nowrap}
+  td:first-child{font:11px/1.8 var(--pixel);color:#b9a3ff;white-space:nowrap}
   .badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap}
   .badge.pass{background:rgba(74,222,128,.12);color:var(--pass)}
   .badge.flaw{background:rgba(251,146,60,.14);color:var(--flaw)}
@@ -159,7 +168,7 @@
   @media (max-width:720px){.learn{grid-template-columns:1fr}}
   .learn div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14.5px;color:#cfcae0}
   .learn b{display:block;font-family:var(--display);color:var(--text);font-size:15.5px;margin-bottom:2px}
-  .skill-table{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .skill-table{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
   .skill-table .card ul{list-style:none;margin:6px 0 0;padding:0}
   .skill-table .card li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
   .skill-table .card li:last-child{border-bottom:0}
@@ -191,6 +200,7 @@
   <div class="hero-top"><div>
   <div class="eyebrow">▸ 01 · About Me</div>
   <h1>Dechayut<br><span>Panyawutvorakul</span></h1>
+  <p class="tagline">Aspiring Game Designer · QA</p>
   <p class="lead">3rd-year <b>Computer Engineering</b> student, Faculty of Engineering,
      <b>King Mongkut's University of Technology Thonburi (KMUTT)</b>.</p>
   <div class="btns">
@@ -231,10 +241,10 @@
   <article class="feature flip">
     <div class="media-col">
     <div class="media">
-      <video src="media/dungeondrift.mp4" poster="media/dungeondrift_poster.jpg" controls muted playsinline preload="none"></video>
+      <video aria-label="Dungeon Drift gameplay clip, 90 seconds" src="media/dungeondrift.mp4" poster="media/dungeondrift_poster.jpg" controls muted playsinline preload="none"></video>
       <div class="caption"><span>▶ 90s capture: pick hero → fight → recruit → Ascendancy</span><span>Unity 6 · work in progress</span></div>
     </div>
-      <details class="more"><summary>Design highlights (4)</summary><ul class="points">
+      <details class="more" open><summary>Design highlights (4)</summary><ul class="points">
         <li><b>Why the player is a god</b>Auto-battlers can feel like you're just watching. I wanted a reason for that, so I made the player a god.
           Gods don't swing swords. They pick the team, hand out blessings and decide where the party goes next, and that's exactly what you do in the game.</li>
         <li><b>Testing before tuning</b>When a weapon feels off, I don't just guess. I run the same team fight a few times, write down what happened, and only then change something.
@@ -267,6 +277,7 @@
 
   <!-- Unknown To Depth -->
   <article class="feature">
+    <div class="media-col">
     <div class="media gallery">
       <figure><img src="media/utd_floors.webp" alt="Isometric concept art of the 10 floors, from a dark ruined city up to a golden Eden" width="1172" height="433" loading="lazy">
         <figcaption>The 10 floors, each a different world</figcaption></figure>
@@ -275,6 +286,15 @@
       <figure><img src="media/utd_hud_sketch.webp" alt="Rough sketch of the in-game HUD: health bar, Souls and Coins counters, skill and perk slots" width="611" height="378" loading="lazy">
         <figcaption>HUD sketch: health, Souls &amp; Coins, perk slots</figcaption></figure>
       <div class="caption"><span>All art by my teammates. My part was the core loop and mechanics.</span></div>
+    </div>
+      <details class="more"><summary>Design highlights (3)</summary><ul class="points">
+        <li><b>Two kinds of money</b>We split the money in two. Coins are for the run you're in, so you spend them in shops on items that help right now.
+          Souls carry over between runs, so you save them for permanent upgrades and for hiring troops. Artifacts, cores and runes sit on top of that for stat boosts, weapon evolution and perks.</li>
+        <li><b>Doors that tell you what's behind them</b>Every door has a symbol on it: shop, perk, soul room, casino, puzzle or chest.
+          I didn't want picking a path to be a blind guess. When you can see what's behind each door, you're actually weighing risk against reward.</li>
+        <li><b>Progress that carries over</b>If you clear a perk room, it stays unlocked from the first floor on your next run, and you get more perk slots over time (up to 4).
+          Dying still costs you the run, but it never feels like you lost everything.</li>
+      </ul></details>
     </div>
     <div>
       <h3>Unknown To Depth</h3>
@@ -292,14 +312,6 @@
            moment-to-moment gameplay, got the least explanation even though it needed the most. Now I start small, nail the core loop first,
            and design systems that feed into each other instead of piling them up.</span></div>
       </div>
-      <details class="more"><summary>Design highlights (3)</summary><ul class="points">
-        <li><b>Two kinds of money</b>We split the money in two. Coins are for the run you're in, so you spend them in shops on items that help right now.
-          Souls carry over between runs, so you save them for permanent upgrades and for hiring troops. Artifacts, cores and runes sit on top of that for stat boosts, weapon evolution and perks.</li>
-        <li><b>Doors that tell you what's behind them</b>Every door has a symbol on it: shop, perk, soul room, casino, puzzle or chest.
-          I didn't want picking a path to be a blind guess. When you can see what's behind each door, you're actually weighing risk against reward.</li>
-        <li><b>Progress that carries over</b>If you clear a perk room, it stays unlocked from the first floor on your next run, and you get more perk slots over time (up to 4).
-          Dying still costs you the run, but it never feels like you lost everything.</li>
-      </ul></details>
       <div class="links"><a href="https://www.canva.com/design/DAFjdHIb3l0/nLtrp3_wCuFIx3wihWGA6Q/view" target="_blank" rel="noopener">View the 37-slide concept deck ↗</a></div>
     </div>
   </article>
@@ -309,7 +321,7 @@
   <!-- Feywood -->
   <article class="feature flip">
     <div class="media">
-      <video src="media/feywood.mp4" poster="media/feywood_poster.jpg" controls muted playsinline preload="none"></video>
+      <video aria-label="Feywood gameplay clip, 36 seconds" src="media/feywood.mp4" poster="media/feywood_poster.jpg" controls muted playsinline preload="none"></video>
       <div class="caption"><span>▶ 36s gameplay capture</span><span>Unity · Windows build</span></div>
     </div>
     <div>
