@@ -80,7 +80,6 @@
   .note{font-size:14.5px;color:var(--muted);margin:0 0 18px}
   .links a{font-weight:600;margin-right:18px;font-size:15px}
 
-  /* Unknown To Depth "tower" visual */
   /* project facts: label | text rows */
   .prr{margin:14px 0 0;border-top:1px solid var(--line)}
   .prr>div{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
@@ -101,15 +100,11 @@
   .points li::before{content:"";position:absolute;left:0;top:18px;width:7px;height:7px;border-radius:2px;background:var(--teal)}
   .points li b{color:var(--text);margin-right:4px}
   .points li b::after{content:" —";color:var(--muted);font-weight:400}
-  .tower{padding:26px;background:linear-gradient(160deg,#2a0d5c 0%,#140a2b 55%,#0b1f2a 100%)}
-  .tower-title{font:12px var(--pixel);color:#7ff0f0;margin-bottom:6px}
-  .tower-sub{font-size:13px;color:#b9aee0;margin-bottom:18px}
-  .floors{display:flex;flex-direction:column-reverse;gap:6px}
-  .floor{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:13.5px}
-  .floor i{font-style:normal;font:9px var(--pixel);color:var(--teal);min-width:26px}
-  .floor span{flex:1}
-  .floor em{font-style:normal;color:#b9aee0;font-size:12px;text-align:right}
-  .floor.top{background:rgba(0,201,201,.14);border-color:rgba(0,201,201,.35)}
+  /* Unknown To Depth concept-art gallery (white-background art) */
+  .gallery figure{margin:0;border-bottom:1px solid var(--line)}
+  .gallery figure:last-child{border-bottom:0}
+  .gallery img{display:block;width:100%;height:auto;background:#fff}
+  .gallery figcaption{padding:9px 16px;font-size:13px;color:var(--muted)}
 
   /* QA */
   .qa{display:grid;grid-template-columns:1fr 1.35fr;gap:40px;align-items:start}
@@ -267,21 +262,13 @@
 
   <!-- Unknown To Depth -->
   <article class="feature">
-    <div class="media tower" aria-label="The 10 floors of Unknown To Depth">
-      <div class="tower-title">UNKNOWN TO DEPTH</div>
-      <div class="tower-sub">Climb 10 worlds. Die, loop, and the floor changes.</div>
-      <div class="floors">
-        <div class="floor"><i>F1</i><span>The Fallen City</span><em>trap-filled slums</em></div>
-        <div class="floor"><i>F2</i><span>Mystic Forest</span><em>World Tree revives boss</em></div>
-        <div class="floor"><i>F3</i><span>Hirajiroi Castle</span><em>demi-human samurai</em></div>
-        <div class="floor"><i>F4</i><span>Pogo Dynasty Town</span><em>3-zone floor</em></div>
-        <div class="floor"><i>F5</i><span>Baiae Kingdom</span><em>find air rooms</em></div>
-        <div class="floor"><i>F6</i><span>Avalon Empire</span><em>medieval crusade</em></div>
-        <div class="floor"><i>F7</i><span>Genesis</span><em>dwarven tech &amp; guns</em></div>
-        <div class="floor"><i>F8</i><span>Caririus Isles</span><em>3-headed dragon</em></div>
-        <div class="floor"><i>F9</i><span>Library of Era</span><em>debris from rifts</em></div>
-        <div class="floor top"><i>F10</i><span>Eden, the First World</span><em>the first god</em></div>
-      </div>
+    <div class="media gallery">
+      <figure><img src="media/utd_floors.webp" alt="Isometric concept art of the 10 floors, from a dark ruined city up to a golden Eden" width="1172" height="433" loading="lazy">
+        <figcaption>The 10 floors, each a different world</figcaption></figure>
+      <figure><img src="media/utd_bosses.webp" alt="Concept art of the floor bosses" width="1166" height="463" loading="lazy">
+        <figcaption>Floor bosses</figcaption></figure>
+      <figure><img src="media/utd_hud_sketch.webp" alt="Rough sketch of the in-game HUD: health bar, Souls and Coins counters, skill and perk slots" width="611" height="378" loading="lazy">
+        <figcaption>HUD sketch: health, Souls &amp; Coins, perk slots</figcaption></figure>
     </div>
     <div>
       <h3>Unknown To Depth</h3>
