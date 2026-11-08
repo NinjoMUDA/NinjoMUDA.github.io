@@ -77,6 +77,8 @@
   .feature{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start;margin-bottom:64px}
   .feature.flip{grid-template-columns:1fr 1.15fr}
   .feature.flip .media,.feature.flip .media-col{order:2}
+  /* mobile: stacked projects blur together, so give each one its own card */
+  @media (max-width:860px){.feature{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:16px 16px 20px;margin-bottom:28px}.feature>div:not(.media):not(.media-col){order:-1}}
   @media (max-width:860px){.feature,.feature.flip{grid-template-columns:1fr;gap:24px}.feature.flip .media,.feature.flip .media-col{order:0}}
   .media{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
   .media video{width:100%;aspect-ratio:16/10;object-fit:cover;background:#000}
