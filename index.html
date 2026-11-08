@@ -395,7 +395,7 @@
         <tr><td>REG-007</td><td>Back button</td><td>Going back keeps earlier answers</td><td><span class="badge pass">Pass after fix</span></td></tr>
         <tr><td>REG-009</td><td>Double submit</td><td>Spam-clicking Submit → only 1 entry</td><td><span class="badge pass">Pass</span></td></tr>
         <tr><td>REG-019</td><td>Session timeout</td><td>Expired session → redirect to login</td><td><span class="badge pass">Pass</span></td></tr>
-        <tr><td>REG-023</td><td>Date bounds</td><td>Birthdate picker accepts future dates</td><td><span class="badge flaw">Flaw found</span></td></tr>
+        <tr><td>REG-023</td><td>Date bounds</td><td>Birthdate picker blocks future dates</td><td><span class="badge pass">Pass after fix</span></td></tr>
         <tr><td>REG-026</td><td>Malicious file</td><td><code>.exe</code> renamed to <code>.pdf</code> is rejected</td><td><span class="badge pass">Pass</span></td></tr>
         <tr><td>REG-032</td><td>Deadline cutoff</td><td>Submitting exactly at closing time</td><td><span class="badge pass">Pass</span></td></tr>
         <tr><td>REG-033</td><td>Mobile</td><td>Layout, form and uploads on a phone</td><td><span class="badge pass">Pass</span></td></tr>
@@ -409,7 +409,7 @@
       <h4>Going back lost the team picture</h4>
       <p>I uploaded a team picture, went to the next step, then pressed Back. The team name and school were still there, but the picture was gone,
          so a team could lose its picture without noticing.</p>
-      <p>I recorded this clip, sent it to the developers with the steps to reproduce it, and after their fix I ran the case again. It passed.</p>
+      <p>I logged it in our QA sheet and reported it on the team Discord with this clip and the steps to reproduce it. After the developers fixed it, I ran the case again and it passed.</p>
     </div>
   </div>
   <div class="learn">
