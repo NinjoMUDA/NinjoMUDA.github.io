@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Dechayut Panyawutvorakul — Resume</title>
-<!-- Print: Ctrl+P → Save as PDF, A4, margins "None", background graphics ON -->
+<!-- Phone and photo are injected only into the printed PDF (PHONE / PHOTO markers) so they stay off the public site.
+     Print: Ctrl+P → Save as PDF, A4, margins "None", background graphics ON -->
 <style>
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
@@ -13,6 +14,8 @@
   h1 { font-size: 22pt; margin: 0; letter-spacing: .5px; }
   .role { color: #6b3fd6; font-weight: 600; margin: 2px 0 6px; }
   .contact { font-size: 9pt; color: #555; }
+  .head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  .photo { width: 24mm; height: 32mm; object-fit: cover; border-radius: 2px; flex: none; }
   .contact a { color: inherit; }
   h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1px; color: #6b3fd6;
        border-bottom: 1.5px solid #6b3fd6; padding-bottom: 2px; margin: 10px 0 5px; }
@@ -31,12 +34,14 @@
 <body>
 <div class="page">
 
+  <div class="head"><div>
   <h1>DECHAYUT PANYAWUTVORAKUL</h1>
   <div class="role">Game Designer Intern (QA Involved)</div>
   <div class="contact">
     <a href="mailto:ninjomuda@gmail.com">ninjomuda@gmail.com</a> · <!--PHONE-->Bangkok, Thailand ·
     <a href="https://ninjomuda.github.io">ninjomuda.github.io</a> · <a href="https://github.com/NinjoMUDA">github.com/NinjoMUDA</a>
   </div>
+  </div><!--PHOTO--></div>
 
   <h2>Summary</h2>
   <p style="margin:0">
