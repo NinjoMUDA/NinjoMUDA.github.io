@@ -40,6 +40,9 @@
   .hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:520px;height:520px;
     background:radial-gradient(closest-side,rgba(0,201,201,.16),transparent);pointer-events:none}
   .eyebrow{font:10px/1.8 var(--pixel);color:var(--teal);letter-spacing:1px;text-transform:uppercase}
+  .hero-top{display:flex;justify-content:space-between;align-items:center;gap:40px;position:relative}
+  .me{width:150px;height:auto;border-radius:16px;border:1px solid var(--line);flex:none}
+  @media (max-width:700px){.hero-top{flex-direction:column-reverse;align-items:flex-start;gap:20px}.me{width:96px;border-radius:12px}}
   h1{font:700 clamp(40px,7vw,76px)/1.02 var(--display);margin:14px 0 18px;letter-spacing:-1.5px}
   h1 span{background:linear-gradient(90deg,#c4b5fd,var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
   .lead{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:620px;margin:0 0 30px}
@@ -185,6 +188,7 @@
 
 <!-- 1. ABOUT ME -->
 <header class="hero" id="about"><div class="wrap">
+  <div class="hero-top"><div>
   <div class="eyebrow">▸ 01 · About Me</div>
   <h1>Dechayut<br><span>Panyawutvorakul</span></h1>
   <p class="lead">3rd-year <b>Computer Engineering</b> student, Faculty of Engineering,
@@ -193,6 +197,7 @@
     <a class="btn primary" href="#projects">See my projects ↓</a>
     <a class="btn ghost" href="resume.html">Resume</a>
   </div>
+  </div><img class="me" src="media/me.jpg" alt="Photo of Dechayut Panyawutvorakul" width="166" height="220"></div>
 
   <div class="intent">
     <div class="panel">
